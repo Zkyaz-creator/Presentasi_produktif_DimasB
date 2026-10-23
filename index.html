@@ -577,223 +577,64 @@ html.dl-lock,html.dl-lock body{overflow:hidden!important}
 .dl-tip{margin-top:16px;padding:12px 14px;border-radius:16px;background:rgba(255,255,255,.1);font-size:13px;color:#e0e7ff;line-height:1.55}
 @media(prefers-reduced-motion:reduce){#dl-page,#dl-page .dl-c{transition-duration:.01s!important;transition-delay:0s!important}}
 </style>
-<style id="origin-premium-refinement">
-:root {
-  --origin-ink: #07102f;
-  --origin-deep: #0b1749;
-  --origin-glass: rgba(16, 30, 83, .62);
-  --origin-line: rgba(186, 230, 253, .17);
-  --origin-cyan: #7dd3fc;
-  --origin-pink: #ff6b9a;
-  --origin-ease: cubic-bezier(.22, 1, .36, 1);
-}
-
-html {
-  scroll-padding-top: 104px;
-  scrollbar-color: #4b94df #07102f;
-  scrollbar-width: thin;
-}
-body {
-  min-width: 1024px !important;
-  max-width: none;
-  background: var(--origin-ink);
-  -webkit-font-smoothing: antialiased;
-  text-rendering: optimizeLegibility;
-}
-*, *::before, *::after { -webkit-tap-highlight-color: transparent; }
-::selection { background: rgba(255, 94, 142, .38); color: #fff; }
-:focus-visible {
-  outline: 2px solid #bae6fd !important;
-  outline-offset: 4px;
-}
-
-/* Surface navigation: quiet glass instead of a flat floating bar. */
-#navbar {
-  gap: clamp(12px, 2vw, 30px);
-  padding-left: clamp(18px, 4vw, 64px);
-  padding-right: clamp(18px, 4vw, 64px);
-  border-bottom: 1px solid transparent;
-  transition: padding .65s var(--origin-ease), background-color .45s ease,
-    box-shadow .55s ease, border-color .45s ease,
-    backdrop-filter .55s ease, -webkit-backdrop-filter .55s ease;
-}
-#navbar.backdrop-blur-md {
-  border-bottom-color: rgba(186, 230, 253, .14);
-  background: linear-gradient(100deg, rgba(6, 15, 48, .88), rgba(16, 31, 87, .77)) !important;
-  -webkit-backdrop-filter: blur(24px) saturate(145%);
-  backdrop-filter: blur(24px) saturate(145%);
-  box-shadow: 0 14px 38px rgba(2, 8, 35, .22), inset 0 -1px 0 rgba(255,255,255,.035);
-}
-#navbar .space-x-16 { gap: clamp(12px, 1.6vw, 28px); }
-#navbar .space-x-16 > :not([hidden]) ~ :not([hidden]) { margin-left: 0 !important; }
-#navbar a { text-decoration: none; }
-#navbar .space-x-16 > a {
-  font-size: clamp(10px, .88vw, 13px);
-  letter-spacing: .055em;
-  white-space: nowrap;
-  text-shadow: 0 2px 10px rgba(3, 8, 34, .26);
-}
-#navbar > a svg {
-  filter: drop-shadow(0 7px 16px rgba(255, 75, 114, .28));
-  transition: filter .45s ease, transform .65s var(--origin-ease);
-}
-#navbar > a:hover svg { filter: drop-shadow(0 0 23px rgba(255, 94, 142, .65)); }
-#lg-btn {
-  box-shadow: inset 0 1px 0 rgba(255,255,255,.64), 0 10px 30px rgba(2,8,35,.30);
-}
-#lg-panel {
-  border-color: rgba(255,255,255,.34);
-  box-shadow: inset 0 1px 0 rgba(255,255,255,.45), 0 28px 80px rgba(1,7,34,.42);
-}
-
-/* Cinematic surface: soft vignette and atmospheric depth around the existing artwork. */
-.hero-sky {
-  isolation: isolate;
-  background-color: #6f91de;
-  background-image:
-    radial-gradient(ellipse at 50% 12%, rgba(255,255,255,.18), transparent 43%),
-    linear-gradient(180deg, rgba(14, 31, 83, .025) 0%, rgba(10, 23, 65, .04) 52%, rgba(5, 15, 50, .34) 100%),
-    linear-gradient(180deg, #667eea 0%, #64b3f4 45%, #c2e59c 90%, #fffbd5 100%);
-}
-.hero-sky::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  z-index: 1;
-  pointer-events: none;
-  background: radial-gradient(ellipse at 50% 28%, transparent 20%, rgba(9, 24, 67, .08) 72%, rgba(6, 18, 53, .22) 115%);
-}
-.sunbeams { mix-blend-mode: screen; opacity: .68; }
-#parallax-title { z-index: 10; width: min(100%, 1120px); }
-#parallax-title > p:first-child {
-  font-size: clamp(9px, .9vw, 12px);
-  letter-spacing: clamp(.16em, .35vw, .35em);
-  text-shadow: 0 3px 18px rgba(17, 38, 90, .28);
-}
-#parallax-title h1 {
-  font-size: clamp(44px, 7.25vw, 92px) !important;
-  letter-spacing: clamp(.055em, .85vw, .14em) !important;
-  line-height: .98 !important;
-  text-wrap: balance;
-  text-shadow: 0 3px 0 rgba(39, 63, 132, .08), 0 16px 42px rgba(13, 32, 85, .24) !important;
-}
-#parallax-title h1 .aq-l { animation-duration: 6.4s; }
-#parallax-title > p:nth-of-type(2) {
-  font-size: clamp(14px, 1.8vw, 23px) !important;
-  line-height: 1.5;
-  text-wrap: balance;
-}
-.btn-pink {
-  border: 1px solid rgba(255,255,255,.24);
-  box-shadow: 0 12px 28px rgba(214, 35, 94, .28), inset 0 1px 0 rgba(255,255,255,.26);
-  letter-spacing: .17em;
-}
-.btn-pink:hover {
-  box-shadow: 0 18px 38px rgba(214, 35, 94, .36), 0 0 0 1px rgba(255,255,255,.12), inset 0 1px 0 rgba(255,255,255,.32);
-}
-.btn-outline-white {
-  border-color: rgba(225, 245, 255, .48);
-  background: rgba(225, 245, 255, .055);
-  -webkit-backdrop-filter: blur(9px);
-  backdrop-filter: blur(9px);
-}
-
-/* Deeper blue gradients, restrained light and cleaner content rhythm. */
-.underwater-world {
-  background:
-    radial-gradient(ellipse at 12% 7%, rgba(56, 189, 248, .13), transparent 38%),
-    radial-gradient(ellipse at 88% 28%, rgba(129, 140, 248, .12), transparent 34%),
-    linear-gradient(180deg, #075aa7 0%, #0a3d91 18%, #172a78 45%, #20206b 75%, #101443 100%);
-}
-.underwater-rays { opacity: .82; }
-#sealife, #bubble-container { contain: layout paint; }
-#kelompok-awal, #misi-kami, #modul-praktik, #materi, #galeri, #chmod-lab, #kelompok-bayu {
-  scroll-margin-top: 96px;
-}
-#kelompok-awal h2,
-#misi-kami h2,
-#modul-praktik h3,
-#materi h3,
-#galeri h3,
-#chmod-lab h3,
-#kelompok-bayu h2 {
-  text-wrap: balance;
-  text-shadow: 0 8px 28px rgba(3, 8, 38, .27);
-}
-#kelompok-awal h2, #modul-praktik h3, #galeri h3 {
-  letter-spacing: -.035em;
-}
-#kelompok-awal .member-card {
-  border: 1px solid rgba(186, 230, 253, .20);
-  background: linear-gradient(150deg, rgba(65, 77, 188, .83), rgba(16, 24, 84, .94) 75%);
-  box-shadow: 0 22px 52px rgba(3, 9, 44, .34), inset 0 1px 0 rgba(255,255,255,.16);
-  -webkit-backdrop-filter: blur(10px);
-  backdrop-filter: blur(10px);
-}
-#kelompok-awal .member-card:hover {
-  box-shadow: 0 30px 60px rgba(3, 9, 44, .42), 0 0 24px rgba(99, 102, 241, .15), inset 0 1px 0 rgba(255,255,255,.24);
-}
-.origin-card {
-  border: 1px solid rgba(186, 230, 253, .14);
-  box-shadow: 0 24px 56px rgba(4, 8, 40, .34), inset 0 1px 0 rgba(255,255,255,.17);
-  backface-visibility: hidden;
-}
-.origin-card::after { border: 1px solid rgba(255,255,255,.035); }
-.origin-card:hover {
-  box-shadow: 0 34px 70px rgba(3, 8, 35, .48), 0 0 28px rgba(87, 132, 255, .13), inset 0 1px 0 rgba(255,255,255,.23);
-}
-.member-ava {
-  border: 1px solid rgba(255,255,255,.34);
-  box-shadow: 0 12px 26px rgba(8,10,45,.35), inset 0 1px 3px rgba(255,255,255,.44), 0 0 28px rgba(255,94,142,.10);
-}
-.mcard.pg {
-  border-color: rgba(253, 230, 138, .42);
-  box-shadow: 0 26px 62px rgba(0,0,0,.36), inset 0 1px 0 rgba(255,255,255,.7);
-}
-.mcard.pg h3 { letter-spacing: -.035em; }
-.mcard.pg .kk { box-shadow: 0 5px 14px rgba(55,48,163,.18); }
-#galeri .gstage { perspective: 1700px; }
-.gcard {
-  border-color: rgba(186, 230, 253, .26);
-  background: linear-gradient(155deg, rgba(56, 65, 160, .98), #171a59 66%, #0c123f);
-  box-shadow: 0 32px 72px rgba(0,0,0,.46), inset 0 1px 0 rgba(255,255,255,.12);
-}
-.gcard .gimg {
-  background: radial-gradient(ellipse at 50% 35%, #111f57, #050a2b 78%);
-  box-shadow: inset 0 1px 0 rgba(255,255,255,.08);
-}
-.gcard .gimg img { transition: transform .9s var(--origin-ease), filter .9s ease; }
-.gcard:hover .gimg img { transform: scale(1.035); filter: saturate(1.06) contrast(1.025); }
-#gpanel, #detailModal > div {
-  border-color: rgba(186, 230, 253, .28);
-  box-shadow: 0 40px 110px rgba(0,0,0,.48), inset 0 1px 0 rgba(255,255,255,.13);
-}
-#rwx, .rwx {
-  box-shadow: 0 16px 34px rgba(5, 12, 52, .18), inset 0 1px 0 rgba(255,255,255,.8);
-}
-.rwx-b, .rwx-pre button, .gnav button.arr, #book-ctrl button {
-  transition: transform .3s var(--origin-ease), background .3s ease, border-color .3s ease, box-shadow .3s ease;
-}
-#book-overlay {
-  background: radial-gradient(ellipse at 50% 38%, rgba(37, 72, 164, .84), rgba(3, 5, 28, .97) 76%);
-}
-#book-ctrl { flex-wrap: wrap; padding: 0 14px; }
-#book-ctrl .btn-pink, #book-ctrl .btn-outline-white { box-shadow: 0 10px 24px rgba(0,0,0,.22); }
-#aq-depth { text-shadow: 0 2px 12px rgba(5, 10, 60, .9); }
-
-/* Clear hover feedback, accessible focus, and less motion for reduced-motion users. */
-a, button, [role="button"] { touch-action: manipulation; }
-button { font-family: inherit; }
-button:disabled { cursor: not-allowed; }
-@media (hover: hover) and (pointer: fine) {
-  #lg-btn:hover, .gnav button.arr:hover, .rwx-pre button:hover { filter: brightness(1.08); }
-  .origin-card, .gcard { transform-style: preserve-3d; }
-}
-
-/* Desktop-first layout: preserve the original 1024px minimum canvas. */
-@media (prefers-reduced-motion: reduce) {
-  *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
-  #aq-intro, #aq-orb { display: none !important; }
+<style id="origin-refine-css">
+/* Tiap komponen punya bahan sendiri: tanda pengenal matte, panel instrumen, kertas, tombol karet. Tanpa blur/glow seragam. */
+:root{--of-e:cubic-bezier(.22,1,.36,1)}
+html{scroll-padding-top:96px;scrollbar-color:#4b94df #07102f;scrollbar-width:thin;-webkit-text-size-adjust:100%;-webkit-tap-highlight-color:transparent}
+body{min-width:1024px!important;max-width:none;background:#07102f;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+::selection{background:rgba(255,94,142,.45);color:#fff}
+:focus-visible{outline:2px solid #bae6fd!important;outline-offset:3px}
+.mcard.pg,.dl-c,.tm,.cmd,#modalBody,#gc,code,pre,.note,input,textarea{-webkit-user-select:text;user-select:text}
+a,button,[role="button"],.rwx-b{touch-action:manipulation}
+button{font-family:inherit}button:disabled{cursor:not-allowed}
+h2,h3{text-wrap:balance}
+/* navigasi: bilah padat saat di-scroll, bukan kaca buram */
+#navbar{gap:clamp(12px,2vw,30px);padding-left:clamp(18px,4vw,64px);padding-right:clamp(18px,4vw,64px);border-bottom:1px solid transparent}
+#navbar.backdrop-blur-md{background:rgba(7,16,47,.94)!important;border-bottom-color:rgba(186,230,253,.12);-webkit-backdrop-filter:none;backdrop-filter:none;box-shadow:none}
+#navbar .space-x-16{gap:clamp(12px,1.6vw,28px)}
+#navbar .space-x-16>:not([hidden])~:not([hidden]){margin-left:0!important}
+#navbar a{text-decoration:none}
+#navbar .space-x-16>a{font-size:clamp(10px,.88vw,13px);letter-spacing:.055em;white-space:nowrap}
+/* hero: muncul bertahap sekali jalan setelah transisi air */
+#parallax-title{width:min(100%,1120px)}
+#parallax-title h1 .aq-l{animation-duration:6.4s}
+#parallax-title>p:first-child{animation:ofRise 1.4s var(--of-e) 2.3s backwards}
+#parallax-title>h1{animation:ofRise 1.7s var(--of-e) 2.45s backwards}
+#parallax-title>h1+p{animation:ofRise 1.4s var(--of-e) 2.75s backwards}
+#parallax-title>.btn-pink{animation:ofRise 1.3s var(--of-e) 3s backwards}
+@keyframes ofRise{from{opacity:0;transform:translate3d(0,38px,0) scale(.97)}}
+/* tombol utama: karet/enamel dengan tepi bawah, ditekan turun; tanpa glow */
+.btn-pink{background:#ff5e8e;letter-spacing:.17em;box-shadow:0 3px 0 #b8325f;transition:transform .18s ease,box-shadow .18s ease,background .2s ease}
+.btn-pink:hover{background:#ff4f84;transform:translateY(-1px);box-shadow:0 4px 0 #b8325f}
+.btn-pink:active{transform:translateY(3px);box-shadow:0 0 0 #b8325f}
+.btn-pink::after{display:none}
+/* kartu anggota: tanda pengenal penyelam (matte, sudut tegas, strip identitas) */
+#kelompok-awal .member-card{border-radius:14px;background:#242b8f;border-top:5px solid #ff5e8e;box-shadow:0 18px 30px -16px rgba(2,6,40,.85);animation:none}
+.member-no{font-family:'JetBrains Mono',monospace;font-weight:700}
+.member-ava{background:#2f3ab0;box-shadow:inset 0 0 0 2px rgba(186,230,253,.5)}
+/* laboratorium: panel instrumen gelap, garis tipis */
+#chmod-lab>.origin-card{border-radius:16px;background:#0c1550;border:1px solid rgba(125,211,252,.22);box-shadow:inset 0 0 0 1px rgba(0,0,0,.35),0 24px 40px -20px rgba(0,0,0,.7);animation:none}
+/* materi: kertas dengan serat halus, bayangan rapat */
+.mcard.pg{position:relative;box-shadow:0 16px 28px -14px rgba(20,10,0,.6),inset 0 0 0 1.5px rgba(180,140,60,.5)}
+.mcard.pg::before{content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;opacity:.2;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .45 0 0 0 0 .32 0 0 0 0 .12 0 0 0 .9 0'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)'/%3E%3C/svg%3E")}
+.mcard.pg>*{position:relative}
+/* galeri: kartu pajang matte + bayangan lantai */
+#galeri .gstage{perspective:1700px}
+.gcard{background:#151b5e;border:1px solid rgba(165,180,252,.3);box-shadow:0 26px 36px -20px rgba(0,0,0,.75)}
+.gcard .gimg{background:#050a2b}
+#galeri .gstage::after{content:"";position:absolute;left:50%;bottom:-8px;width:min(440px,84vw);height:34px;margin-left:calc(min(440px,84vw)/-2);pointer-events:none;background:radial-gradient(ellipse,rgba(2,6,40,.55),transparent 70%)}
+/* peti: antisipasi saat disorot, lalu ayunan membuka */
+.chest-stage:not(.open) .chest-lid{transition-duration:.5s}
+@media(hover:hover){.chest-stage:not(.open):hover .chest-lid{transform:rotateX(-7deg)}}
+.chest-stage.open .chest-lid{transition-timing-function:cubic-bezier(.34,1.25,.5,1)}
+.chest-stage:not(.open):active .chest-box{transform:scale(.975)}
+.chest-box{transition:transform .35s var(--of-e)}
+#book-overlay::before{content:"";position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse 50% 42% at 50% 46%,rgba(253,224,138,.14),transparent 72%)}
+#book-ctrl{flex-wrap:wrap;padding:0 14px}
+.of-paused *,.of-paused *::before,.of-paused *::after{animation-play-state:paused!important}
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{scroll-behavior:auto!important;animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
+  #aq-intro,#aq-orb{display:none!important}
 }
 </style>
 
@@ -2486,6 +2327,9 @@ document.addEventListener('click',e=>{const a=e.target.closest('a[href="#downloa
 document.getElementById('dl-back').addEventListener('click',close);
 addEventListener('keydown',e=>{if(e.key==='Escape'&&P.classList.contains('on'))close()});
 P.setAttribute('aria-hidden','true');if(location.hash==='#download')ui(true);})();
+</script>
+<script id="origin-refine-js">
+(()=>{const r=document.documentElement;document.addEventListener('visibilitychange',()=>r.classList.toggle('of-paused',document.hidden))})();
 </script>
 </body>
 </html>
